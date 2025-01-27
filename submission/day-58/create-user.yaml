@@ -1,0 +1,9 @@
+# Write an ansible playbook to create a new user.
+
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Create new user
+      shell: useradd sachin
+      

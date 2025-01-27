@@ -1,0 +1,13 @@
+# Write an ansible playbook to create a file on a different server
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Create file on different servers
+      file:
+        path: /tmp/newFile
+        state: touch
+    - name: Create directory on different servers
+      file:
+        path: /tmp/newFolder
+        state: directory

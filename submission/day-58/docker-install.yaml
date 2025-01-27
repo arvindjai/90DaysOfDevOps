@@ -1,0 +1,16 @@
+# Write an ansible playbook to install docker on a group of servers
+---
+- hosts: dev
+  become: yes
+  tasks:
+    - name: apt update
+      caches:
+        state: present
+    - name: install Docker
+      apt:
+        name: docker
+        state: present
+    - name: start docker service
+      systemd:
+        state: started
+        enabled: yes 
